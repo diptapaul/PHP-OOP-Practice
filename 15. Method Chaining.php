@@ -10,30 +10,32 @@
 
 <div class="phpcoding">
  <section class="headeroption">
-  <h2><?php echo "Object Oriented PHP Practice (Class, Method and Object)"; ?></h2>
+  <h2><?php echo "Object Oriented PHP Practice (PHP Method Chaining)"; ?></h2>
  </section> 
  <section class="maincontent">
- 
- 
- 
-   <?php
+   	
+   	<?php
 
-   		class Student{
-   			public $name;
-   			public $id;
-   			public function printInformation() {
-   				echo "Students Name is : ".$this->name."<br>";
-   				echo "Students Id is   : ".$this->id."<br>";
-   			}
-   		}
+        class Calculation{
+          
+          public $a, $b, $result;
 
-   		$student = new Student;
-   		$student->name = "Dipta Paul";
-   		$student->id = "1422020038";
-   		$student->printInformation();
+          public function getValue($a, $b) {
+            $this->a = $a;
+            $this->b = $b;
+            return $this;
+          }
 
-   ?>
-   
+          public function getResult() {
+            $this->result = $this->a + $this->b;
+            return $this->result;
+          }
+        }
+
+        $calculation = new Calculation();
+        echo "The Addition is ".$calculation->getValue(10, 5)->getResult();
+
+   	?>
      
    
   </section>

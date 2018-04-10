@@ -43,7 +43,7 @@
    
   </section>
  <section class="footeroption">
-  <h2><?php echo "www.trainingwithliveproject.com"; ?></h2>
+  <h2><?php echo "Practice Hard :) Thank you :)"; ?></h2>
  </section>
 </div>
 </body>

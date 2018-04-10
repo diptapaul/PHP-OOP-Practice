@@ -10,30 +10,19 @@
 
 <div class="phpcoding">
  <section class="headeroption">
-  <h2><?php echo "Object Oriented PHP Practice (Class, Method and Object)"; ?></h2>
+  <h2><?php echo "Object Oriented PHP Practice (Autoloading Classes)"; ?></h2>
  </section> 
  <section class="maincontent">
- 
- 
- 
-   <?php
+   	
+   	<?php
 
-   		class Student{
-   			public $name;
-   			public $id;
-   			public function printInformation() {
-   				echo "Students Name is : ".$this->name."<br>";
-   				echo "Students Id is   : ".$this->id."<br>";
-   			}
-   		}
+        function __autoload($classname) {
+            include $classname.".php";
+        }
 
-   		$student = new Student;
-   		$student->name = "Dipta Paul";
-   		$student->id = "1422020038";
-   		$student->printInformation();
+        $calculator = new func();
 
-   ?>
-   
+   	?>
      
    
   </section>
