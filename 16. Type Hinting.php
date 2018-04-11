@@ -10,29 +10,32 @@
 
 <div class="phpcoding">
  <section class="headeroption">
-  <h2><?php echo "Object Oriented PHP Practice (Autoloading Classes)"; ?></h2>
+  <h2><?php echo "Object Oriented PHP Practice (Type Hinting)"; ?></h2>
  </section> 
  <section class="maincontent">
    	
    	<?php
 
-        function __autoload($classname) {
-            include $classname.".php";
+        class Student{
+            function information($name) {
+                echo "The Student's Name is : $name.<br>";
+            }
         }
 
-        // alternative
-        spl_autoload_register(function($classname){
-          include $classname.".php";
-        });
-
-        $calculator = new func();
+        class Boy{
+            function inFormation(Student $student) {
+                $student->information("Dipta Paul");
+            }
+        }
+        $boy = new Boy;
+        $boy->inFormation(new Student);
 
    	?>
      
    
   </section>
  <section class="footeroption">
-  <h2><?php echo "Practice Hard :) Thank you :)"; ?></h2>
+  <h2><?php echo "www.trainingwithliveproject.com"; ?></h2>
  </section>
 </div>
 </body>
